@@ -8,7 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Shopshop
   class Application < Rails::Application
-    
+
+    # help with procompile to deploy properly to heroku
+#    config.assets.initilize_on_precompile = false
+
+
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
